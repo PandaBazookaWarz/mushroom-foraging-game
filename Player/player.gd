@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const ACCEL = 7
 
+@export var playerSprite : Sprite2D
+
 var input: Vector2
 
 func get_input():
@@ -15,3 +17,10 @@ func _process(delta: float) -> void:
 	
 	velocity = lerp(velocity, player_input * SPEED, delta * ACCEL)
 	move_and_slide()
+	
+	if(velocity.x > 0):
+		playerSprite.flip_h = false
+	if(velocity.x < 0):
+		playerSprite.flip_h = true
+		
+		

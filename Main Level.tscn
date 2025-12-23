@@ -11,8 +11,9 @@ size = Vector2(96, 124)
 
 [node name="Main Level" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("playerSprite")]
 script = ExtResource("1_ceigu")
+playerSprite = NodePath("Float Animation/Player")
 
 [node name="Float Animation" type="Node2D" parent="CharacterBody2D" node_paths=PackedStringArray("Player", "Shadow")]
 script = ExtResource("2_uxobj")
