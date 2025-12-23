@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7b4wobu0eojo"]
+[gd_scene load_steps=8 format=3 uid="uid://c7b4wobu0eojo"]
 
+[ext_resource type="Texture2D" uid="uid://cy4on2rbe8lxy" path="res://Level/Forest/Forest Grass 1.png" id="1_bs0lh"]
 [ext_resource type="Script" uid="uid://bum6hkgula8ek" path="res://Player/player.gd" id="1_ceigu"]
 [ext_resource type="Script" uid="uid://cc75ll7k2pkqm" path="res://Player/player_float_animation.gd" id="2_uxobj"]
 [ext_resource type="Texture2D" uid="uid://d1pstv6w5e1h1" path="res://Player/Player.png" id="3_bs0lh"]
@@ -10,6 +11,23 @@
 size = Vector2(96, 124)
 
 [node name="Main Level" type="Node2D"]
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Level"]
+offset_left = -7120.5254
+offset_top = -2637.0
+offset_right = 1455.0
+offset_bottom = 5879.0
+color = Color(0.4862745, 0.5411765, 0.38039216, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Level"]
+offset_left = -6370.0
+offset_top = -1857.0
+offset_right = 1201.0
+offset_bottom = 4865.0
+texture = ExtResource("1_bs0lh")
+stretch_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("playerSprite")]
 script = ExtResource("1_ceigu")
