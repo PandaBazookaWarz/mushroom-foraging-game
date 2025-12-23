@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7b4wobu0eojo"]
+
+[ext_resource type="Script" uid="uid://bum6hkgula8ek" path="res://Player/player.gd" id="1_ceigu"]
+[ext_resource type="Script" uid="uid://cc75ll7k2pkqm" path="res://Player/player_float_animation.gd" id="2_uxobj"]
+[ext_resource type="Texture2D" uid="uid://d1pstv6w5e1h1" path="res://Player/Player.png" id="3_bs0lh"]
+[ext_resource type="Texture2D" uid="uid://ki4yq6mheohc" path="res://Player/Player Shadow.png" id="4_uxobj"]
+[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://icon.svg" id="4_vjb8f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(96, 124)
+
+[node name="Main Level" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_ceigu")
+
+[node name="Float Animation" type="Node2D" parent="CharacterBody2D" node_paths=PackedStringArray("Player", "Shadow")]
+script = ExtResource("2_uxobj")
+Player = NodePath("Player")
+Shadow = NodePath("Shadow")
+
+[node name="Shadow" type="Sprite2D" parent="CharacterBody2D/Float Animation"]
+position = Vector2(33, 161)
+scale = Vector2(0.58928573, 0.58928573)
+texture = ExtResource("4_uxobj")
+
+[node name="Player" type="Sprite2D" parent="CharacterBody2D/Float Animation"]
+position = Vector2(34.185005, 59.490784)
+scale = Vector2(0.6339611, 0.6339611)
+texture = ExtResource("3_bs0lh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(33, 37)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0.045, 31.97)
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(202, -9)
+texture = ExtResource("4_vjb8f")
