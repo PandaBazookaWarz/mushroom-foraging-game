@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cpt61ep2tgvrg"
-path="res://.godot/imported/Baliho.otf-4aaa5f20d0adb53dad0321fda1a0a90b.fontdata"
+path="res://.godot/imported/Baliho.otf-1df1261381fd5b8f5b8647aa1345b626.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Baliho.otf"
-dest_files=["res://.godot/imported/Baliho.otf-4aaa5f20d0adb53dad0321fda1a0a90b.fontdata"]
+source_file="res://Assets/fonts/Baliho.otf"
+dest_files=["res://.godot/imported/Baliho.otf-1df1261381fd5b8f5b8647aa1345b626.fontdata"]
 
 [params]
 

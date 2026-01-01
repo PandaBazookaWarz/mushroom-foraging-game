@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dlbl1fic8ch31"]
 
-[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://assets/icon.svg" id="1_ffxcj"]
+[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="1_ffxcj"]
 [ext_resource type="PackedScene" uid="uid://chir6rj0er15s" path="res://UI/Inventory/inventory_pages.tscn" id="2_83ecg"]
 
 [node name="Compendium" type="CanvasLayer"]

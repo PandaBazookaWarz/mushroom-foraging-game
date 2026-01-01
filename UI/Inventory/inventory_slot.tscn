@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dx5hyhhoxa4d5"]
 
-[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://assets/icon.svg" id="1_2ohio"]
-[ext_resource type="Script" uid="uid://7mdk5sqov7pm" path="res://UI/Inventory/inventory_slot.gd" id="1_c5hg6"]
-[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://assets/fonts/Baliho.otf" id="2_c5hg6"]
+[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="1_2ohio"]
+[ext_resource type="Script" path="res://UI/Inventory/inventory_slot.gd" id="1_c5hg6"]
+[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/fonts/Baliho.otf" id="2_c5hg6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5bh6"]
 content_margin_left = 0.0

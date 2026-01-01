@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://chir6rj0er15s"]
 
-[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://assets/icon.svg" id="1_4u4pm"]
+[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="1_4u4pm"]
 [ext_resource type="Script" uid="uid://boq2erq1r6r3p" path="res://UI/Inventory/inventory_pages.gd" id="1_q0abd"]
 [ext_resource type="PackedScene" uid="uid://hswrkl21eigi" path="res://UI/Inventory/inventory_grid.tscn" id="2_j47vt"]
-[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://assets/fonts/Baliho.otf" id="3_q0abd"]
+[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/fonts/Baliho.otf" id="3_q0abd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j47vt"]
 
