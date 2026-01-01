@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlbl1fic8ch31"]
+
+[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://icon.svg" id="1_ffxcj"]
+[ext_resource type="PackedScene" uid="uid://chir6rj0er15s" path="res://inventory_pages.tscn" id="2_83ecg"]
+
+[node name="Compendium" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FocusTransparency" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.38039216)
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/FocusTransparency"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Book" type="NinePatchRect" parent="Control/FocusTransparency/CenterContainer"]
+custom_minimum_size = Vector2(1536, 864)
+layout_mode = 2
+texture = ExtResource("1_ffxcj")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="TabRibbons" type="TabContainer" parent="Control/FocusTransparency/CenterContainer/Book"]
+layout_mode = 1
+offset_top = -31.0
+offset_right = 1536.0
+tab_alignment = 1
+current_tab = 0
+
+[node name="Inventory" type="TabBar" parent="Control/FocusTransparency/CenterContainer/Book/TabRibbons"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="InventoryPages" parent="Control/FocusTransparency/CenterContainer/Book/TabRibbons/Inventory" instance=ExtResource("2_83ecg")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Compendium" type="TabBar" parent="Control/FocusTransparency/CenterContainer/Book/TabRibbons"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1

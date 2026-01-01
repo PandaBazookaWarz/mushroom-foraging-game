@@ -13,6 +13,13 @@ func get_input():
 	return input.normalized()
 
 func _process(delta: float) -> void:
+	handle_animation(delta)
+	if (Input.is_action_just_pressed("interact")):
+		handle_interact()
+	if (Input.is_action_just_pressed("inventory")):
+		GameManager.inventory.print_inventory()
+		
+func handle_animation(delta):
 	var player_input = get_input()
 	
 	velocity = lerp(velocity, player_input * SPEED, delta * ACCEL)
@@ -23,4 +30,24 @@ func _process(delta: float) -> void:
 	if(velocity.x < 0):
 		playerSprite.flip_h = true
 		
-		
+func handle_interact():
+	var other = get_closest_colliding()
+	if other:
+		# Go up to the parent that actually has interact()
+		var target = other
+		while target and not target.has_method("interact"):
+			target = target.get_parent()
+		if target:
+			target.interact(self)
+
+
+func get_closest_colliding() -> Area2D:
+	var colliding: Array[Area2D] = $InteractionArea.get_overlapping_areas()
+	var closest: Area2D = null
+	var closest_dist := INF
+	for c in colliding:
+		var dist := global_position.distance_squared_to(c.global_position)
+		if dist < closest_dist:
+			closest_dist = dist
+			closest = c
+	return closest
