@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8y02pmni7yd4"]
+[gd_scene load_steps=6 format=3 uid="uid://c8y02pmni7yd4"]
 
 [ext_resource type="Script" uid="uid://8o3f680lv66c" path="res://Items/Collectable.gd" id="1_hpmtj"]
-[ext_resource type="Script" uid="uid://brnu30qldpksj" path="res://Inventory/ItemData.gd" id="2_vvxk4"]
-[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://icon.svg" id="3_656ai"]
+[ext_resource type="Script" uid="uid://brnu30qldpksj" path="res://UI/Inventory/ItemData.gd" id="2_vvxk4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rph0f"]
 load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
@@ -23,7 +22,7 @@ itemData = SubResource("Resource_vcbco")
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_656ai")
+texture = SubResource("CompressedTexture2D_rph0f")
 
 [node name="Area2D" type="Area2D" parent="."]
 
