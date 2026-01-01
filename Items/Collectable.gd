@@ -1,5 +1,5 @@
 @tool
-extends Interactable
+extends Node2D
 class_name Collectable
 
 @export var itemData: ItemData

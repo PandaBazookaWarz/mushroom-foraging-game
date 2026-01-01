@@ -18,6 +18,8 @@ func _process(delta: float) -> void:
 		handle_interact()
 	if (Input.is_action_just_pressed("inventory")):
 		GameManager.inventory.print_inventory()
+		$"../Compendium".visible = !$"../Compendium".visible
+		
 		
 func handle_animation(delta):
 	var player_input = get_input()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://hswrkl21eigi"]
 
-[ext_resource type="PackedScene" uid="uid://dx5hyhhoxa4d5" path="res://inventory_slot.tscn" id="1_pohso"]
+[ext_resource type="PackedScene" uid="uid://dx5hyhhoxa4d5" path="res://inventory_slot.tscn" id="1_c3l4r"]
 
 [node name="InventoryGrid" type="Control"]
 layout_mode = 3
@@ -24,50 +24,50 @@ grow_vertical = 2
 layout_mode = 2
 columns = 4
 
-[node name="InventorySlot" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot2" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot2" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot3" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot3" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot4" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot4" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot5" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot5" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot6" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot6" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot7" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot7" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot8" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot8" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot9" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot9" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot10" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot10" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot11" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot11" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot12" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot12" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot13" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot13" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot14" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot14" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot15" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot15" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2
 
-[node name="InventorySlot16" parent="MarginContainer/GridContainer" instance=ExtResource("1_pohso")]
+[node name="InventorySlot16" parent="MarginContainer/GridContainer" instance=ExtResource("1_c3l4r")]
 layout_mode = 2

@@ -32,6 +32,7 @@ func remove(item: ItemData, amount: int = 1) -> bool:
 	return false
 
 func print_inventory():
+	GameManager.inventory_vis.update_inventory_vis()
 	for stack in GameManager.inventory.items:
 		print(stack.item.name, "x", stack.amount)
 		
