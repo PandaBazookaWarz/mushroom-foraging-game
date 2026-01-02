@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b55vyjg3g5o2m"
-path="res://.godot/imported/Inventory UI - Window.png-1db7717e7adc5182c93b44ff0380ee6a.ctex"
+uid="uid://bufxlmlwnkm70"
+path="res://.godot/imported/General UI - Circle.png-4298774df008809ac83d326e31a784b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Inventory/Inventory UI - Window.png"
-dest_files=["res://.godot/imported/Inventory UI - Window.png-1db7717e7adc5182c93b44ff0380ee6a.ctex"]
+source_file="res://Assets/UI/General/General UI - Circle.png"
+dest_files=["res://.godot/imported/General UI - Circle.png-4298774df008809ac83d326e31a784b0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c13xa724j3cly"
-path="res://.godot/imported/Inventory UI - Slot.png-5326525ddbe4b1a978f58b92af8ab582.ctex"
+uid="uid://b0h7d8wnh814m"
+path="res://.godot/imported/Inventory UI - Mushroom Icon.png-cbda240e12e146842f0ab60c8a3f91cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Inventory/Inventory UI - Slot.png"
-dest_files=["res://.godot/imported/Inventory UI - Slot.png-5326525ddbe4b1a978f58b92af8ab582.ctex"]
+source_file="res://Assets/UI/Inventory/Inventory UI - Mushroom Icon.png"
+dest_files=["res://.godot/imported/Inventory UI - Mushroom Icon.png-cbda240e12e146842f0ab60c8a3f91cd.ctex"]
 
 [params]
 

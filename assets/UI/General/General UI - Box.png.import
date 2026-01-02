@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7irmno0ql72q"
-path="res://.godot/imported/Inventory UI - Tab.png-3e2f77986ea12ecbfa094b7bd11d90dd.ctex"
+uid="uid://0vmpmi35pbho"
+path="res://.godot/imported/General UI - Box.png-684089239e7dbbca1c02ebcc49987ddc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Inventory/Inventory UI - Tab.png"
-dest_files=["res://.godot/imported/Inventory UI - Tab.png-3e2f77986ea12ecbfa094b7bd11d90dd.ctex"]
+source_file="res://Assets/UI/General/General UI - Box.png"
+dest_files=["res://.godot/imported/General UI - Box.png-684089239e7dbbca1c02ebcc49987ddc.ctex"]
 
 [params]
 
