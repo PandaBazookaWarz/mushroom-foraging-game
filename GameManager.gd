@@ -1,7 +1,10 @@
 extends Node
 
 @onready var inventory := Inventory.new()
-@onready var inventory_vis
+var inventory_vis #reference to visuals
+@onready var compendium
+@onready var paused = false;
 
 func _ready():
-	print("GameManager ready!")
+	print("GameManager ready")
+	
