@@ -13,12 +13,14 @@ func get_input():
 	return input.normalized()
 
 func _process(delta: float) -> void:
-	handle_animation(delta)
-	if (Input.is_action_just_pressed("interact")):
-		handle_interact()
+	if !GameManager.paused:
+		handle_animation(delta)
+		if (Input.is_action_just_pressed("interact")):
+			handle_interact()
+			
 	if (Input.is_action_just_pressed("inventory")):
-		GameManager.inventory.print_inventory()
-		$"../Compendium".visible = !$"../Compendium".visible
+		GameManager.compendium.inventory_visualization.toggle_inventory()
+		
 		
 		
 func handle_animation(delta):

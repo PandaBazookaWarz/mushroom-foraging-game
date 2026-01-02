@@ -1,20 +1,19 @@
 [gd_scene load_steps=6 format=3 uid="uid://dx5hyhhoxa4d5"]
 
 [ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="1_2ohio"]
-[ext_resource type="Script" path="res://UI/Inventory/inventory_slot.gd" id="1_c5hg6"]
-[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/fonts/Baliho.otf" id="2_c5hg6"]
+[ext_resource type="Script" uid="uid://7mdk5sqov7pm" path="res://UI/Inventory/inventory_slot.gd" id="1_c5hg6"]
+[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/Fonts/Baliho.otf" id="2_c5hg6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5bh6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5hg6"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-corner_detail = 5
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.38431373)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_bfyh4"]
 line_spacing = 0.0
@@ -22,14 +21,20 @@ font = ExtResource("2_c5hg6")
 font_size = 32
 shadow_color = Color(0, 0, 0, 0.13725491)
 
-[node name="InventorySlot" type="Panel"]
-custom_minimum_size = Vector2(128, 128)
-offset_right = 96.0
-offset_bottom = 96.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_f5bh6")
+[node name="InventorySlot" type="AspectRatioContainer" node_paths=PackedStringArray("icon", "count")]
+offset_right = 136.0
+offset_bottom = 117.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_c5hg6")
+icon = NodePath("Panel/MarginContainer/Icon")
+count = NodePath("Count")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c5hg6")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,22 +48,13 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Icon" type="TextureRect" parent="MarginContainer"]
+[node name="Icon" type="TextureRect" parent="Panel/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("1_2ohio")
-expand_mode = 3
+expand_mode = 1
 
 [node name="Count" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -67.0
-offset_top = -34.0
-grow_horizontal = 0
-grow_vertical = 0
+layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "2 "

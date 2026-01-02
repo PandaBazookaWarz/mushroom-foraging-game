@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlbl1fic8ch31"]
+[gd_scene load_steps=5 format=3 uid="uid://dlbl1fic8ch31"]
 
-[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="1_ffxcj"]
+[ext_resource type="Script" uid="uid://bkdjehnj8f7k8" path="res://UI/Inventory/compendium.gd" id="1_q40mr"]
 [ext_resource type="PackedScene" uid="uid://chir6rj0er15s" path="res://UI/Inventory/inventory_pages.tscn" id="2_83ecg"]
+[ext_resource type="Texture2D" uid="uid://dta6w4kf3ghna" path="res://Assets/UI/Book/Book UI - Binding.png" id="2_xentw"]
+[ext_resource type="Texture2D" uid="uid://bvs7kgm8cqtpw" path="res://Assets/UI/Book/Book UI - Pages.png" id="3_7f5ll"]
 
-[node name="Compendium" type="CanvasLayer"]
+[node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("inventory_visualization")]
+script = ExtResource("1_q40mr")
+inventory_visualization = NodePath("Control/FocusTransparency/CenterContainer/BindingTexture/MarginContainer/PagesTexture/MarginContainer/InventoryPages")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -22,6 +26,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.38039216)
 
+[node name="MarginContainer" type="MarginContainer" parent="Control/FocusTransparency"]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 522.0
+offset_right = 992.0
+offset_bottom = 558.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 18
+
 [node name="CenterContainer" type="CenterContainer" parent="Control/FocusTransparency"]
 layout_mode = 1
 anchors_preset = 15
@@ -30,37 +45,44 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Book" type="NinePatchRect" parent="Control/FocusTransparency/CenterContainer"]
-custom_minimum_size = Vector2(1536, 864)
+[node name="BindingTexture" type="TextureRect" parent="Control/FocusTransparency/CenterContainer"]
+custom_minimum_size = Vector2(0, 864)
 layout_mode = 2
-texture = ExtResource("1_ffxcj")
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_xentw")
+expand_mode = 3
+stretch_mode = 4
 
-[node name="TabRibbons" type="TabContainer" parent="Control/FocusTransparency/CenterContainer/Book"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/FocusTransparency/CenterContainer/BindingTexture"]
 layout_mode = 1
-offset_top = -31.0
-offset_right = 1536.0
-tab_alignment = 1
-current_tab = 0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 24
 
-[node name="Inventory" type="TabBar" parent="Control/FocusTransparency/CenterContainer/Book/TabRibbons"]
+[node name="PagesTexture" type="TextureRect" parent="Control/FocusTransparency/CenterContainer/BindingTexture/MarginContainer"]
 layout_mode = 2
-metadata/_tab_index = 0
+texture = ExtResource("3_7f5ll")
+expand_mode = 5
+stretch_mode = 4
 
-[node name="InventoryPages" parent="Control/FocusTransparency/CenterContainer/Book/TabRibbons/Inventory" instance=ExtResource("2_83ecg")]
+[node name="MarginContainer" type="MarginContainer" parent="Control/FocusTransparency/CenterContainer/BindingTexture/MarginContainer/PagesTexture"]
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 96
+metadata/_edit_use_anchors_ = true
 
-[node name="Compendium" type="TabBar" parent="Control/FocusTransparency/CenterContainer/Book/TabRibbons"]
-visible = false
+[node name="InventoryPages" parent="Control/FocusTransparency/CenterContainer/BindingTexture/MarginContainer/PagesTexture/MarginContainer" instance=ExtResource("2_83ecg")]
 layout_mode = 2
-metadata/_tab_index = 1

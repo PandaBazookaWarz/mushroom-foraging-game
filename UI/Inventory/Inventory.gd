@@ -1,8 +1,11 @@
 extends Node
 class_name Inventory
 
-@export var capacity: int = 5
-var items: Array[ItemStack] = []
+var capacity: int = 5
+@onready var items: Array[ItemStack] = []
+	
+func _ready() -> void:
+	print("Inventory ready")
 
 # Add an item, stacking if possible
 func add(item: ItemData, amount: int = 1) -> bool:
@@ -31,8 +34,5 @@ func remove(item: ItemData, amount: int = 1) -> bool:
 			return true
 	return false
 
-func print_inventory():
-	GameManager.inventory_vis.update_inventory_vis()
-	for stack in GameManager.inventory.items:
-		print(stack.item.name, "x", stack.amount)
+
 		
