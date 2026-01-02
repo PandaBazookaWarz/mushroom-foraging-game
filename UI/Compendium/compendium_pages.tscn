@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=3 uid="uid://dt53rpmnal505"]
+
+[ext_resource type="Script" uid="uid://boq2erq1r6r3p" path="res://UI/Inventory/inventory_pages.gd" id="1_mtmcn"]
+[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="2_nmu6k"]
+[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/Fonts/Baliho.otf" id="3_f5r1w"]
+[ext_resource type="PackedScene" uid="uid://hswrkl21eigi" path="res://UI/Inventory/inventory_grid.tscn" id="4_143oh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02fst"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lrx5d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f7p5s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3a2qo"]
+font = ExtResource("3_f5r1w")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4u4pm"]
+font = ExtResource("3_f5r1w")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dytd0"]
+
+[node name="CompendiumPages" type="Panel" node_paths=PackedStringArray("inventory_grid")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_02fst")
+script = ExtResource("1_mtmcn")
+inventory_grid = NodePath("HBoxContainer/RightPage/MarginContainer/InventoryGrid")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="LeftPage" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lrx5d")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeftPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPage/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Panel" type="Panel" parent="HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_f7p5s")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_nmu6k")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Title" type="Label" parent="HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "This is some text!"
+label_settings = SubResource("LabelSettings_3a2qo")
+horizontal_alignment = 1
+
+[node name="EntryText" type="Label" parent="HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "This is some text!"
+label_settings = SubResource("LabelSettings_4u4pm")
+horizontal_alignment = 1
+
+[node name="RightPage" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dytd0")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/RightPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="InventoryGrid" parent="HBoxContainer/RightPage/MarginContainer" instance=ExtResource("4_143oh")]
+layout_mode = 2

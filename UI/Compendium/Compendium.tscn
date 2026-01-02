@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlbl1fic8ch31"]
 
-[ext_resource type="Script" uid="uid://bkdjehnj8f7k8" path="res://UI/Inventory/compendium.gd" id="1_q40mr"]
+[ext_resource type="Script" uid="uid://bkdjehnj8f7k8" path="res://UI/Compendium/compendium.gd" id="1_q40mr"]
 [ext_resource type="PackedScene" uid="uid://chir6rj0er15s" path="res://UI/Inventory/inventory_pages.tscn" id="2_83ecg"]
 [ext_resource type="Texture2D" uid="uid://dta6w4kf3ghna" path="res://Assets/UI/Book/Book UI - Binding.png" id="2_xentw"]
-[ext_resource type="Texture2D" uid="uid://bvs7kgm8cqtpw" path="res://Assets/UI/Book/Book UI - Pages.png" id="3_7f5ll"]
+[ext_resource type="Texture2D" uid="uid://cwxe62xalx15v" path="res://Assets/UI/Book/Book UI - Pages.png" id="3_7f5ll"]
 
 [node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("inventory_visualization")]
 script = ExtResource("1_q40mr")
