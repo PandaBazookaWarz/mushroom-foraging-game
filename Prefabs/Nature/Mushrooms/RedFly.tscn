@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvk0xxmnrt60x"]
+
+[ext_resource type="Script" uid="uid://8o3f680lv66c" path="res://ItemData/Collectable.gd" id="1_r1yjd"]
+[ext_resource type="Resource" uid="uid://c8n781uouoqlh" path="res://ItemData/Mushrooms/RedFly.tres" id="2_fqnhy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kgjmj"]
+radius = 64.0
+
+[node name="Collectable" type="Node2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_r1yjd")
+itemData = ExtResource("2_fqnhy")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kgjmj")

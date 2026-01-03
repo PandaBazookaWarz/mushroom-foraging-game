@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjqndonm5gyt1"]
+
+[ext_resource type="Texture2D" uid="uid://bfe3m0xy1gyuj" path="res://Assets/UI/Book/Book UI - Blue Sticky.png" id="1_u5jg0"]
+[ext_resource type="Script" uid="uid://gikms1tohwad" path="res://UI/Compendium/sticky_note.gd" id="2_n5q02"]
+[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/Fonts/Baliho.otf" id="2_xkxcb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n5q02"]
+font = ExtResource("2_xkxcb")
+font_size = 36
+
+[node name="StickyNote" type="TextureRect"]
+offset_left = 41.343384
+offset_top = -98.0
+offset_right = 208.34338
+offset_bottom = 6.0
+texture = ExtResource("1_u5jg0")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_n5q02")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -21.5
+offset_right = 55.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "Forest"
+label_settings = SubResource("LabelSettings_n5q02")
+horizontal_alignment = 1
+vertical_alignment = 1

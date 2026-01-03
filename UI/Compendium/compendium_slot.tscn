@@ -44,3 +44,4 @@ material = SubResource("ShaderMaterial_twnjv")
 layout_mode = 2
 texture = ExtResource("3_66hig")
 expand_mode = 1
+stretch_mode = 5

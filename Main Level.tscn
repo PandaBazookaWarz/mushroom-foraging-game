@@ -1,23 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://c7b4wobu0eojo"]
+[gd_scene load_steps=12 format=3 uid="uid://c7b4wobu0eojo"]
 
 [ext_resource type="Texture2D" uid="uid://cy4on2rbe8lxy" path="res://Assets/Level/Forest/Forest Grass 1.png" id="1_bs0lh"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_ceigu"]
 [ext_resource type="Script" uid="uid://cc75ll7k2pkqm" path="res://Player/player_float_animation.gd" id="2_uxobj"]
 [ext_resource type="Texture2D" uid="uid://d1pstv6w5e1h1" path="res://Player/Player.png" id="3_bs0lh"]
 [ext_resource type="Texture2D" uid="uid://ki4yq6mheohc" path="res://Player/Player Shadow.png" id="4_uxobj"]
-[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="4_vjb8f"]
-[ext_resource type="Script" uid="uid://b0c13e4w6gse" path="res://ItemData/Interactable.gd" id="7_vjb8f"]
-[ext_resource type="PackedScene" uid="uid://c8y02pmni7yd4" path="res://ItemData/Collectable.tscn" id="8_pu0n7"]
 [ext_resource type="PackedScene" uid="uid://dshliqyvc8gs4" path="res://UI/ui.tscn" id="9_42i6i"]
+[ext_resource type="PackedScene" uid="uid://cccvx8hnlgvhs" path="res://Prefabs/Nature/Mushrooms/WhiteButton.tscn" id="9_bvbs8"]
+[ext_resource type="PackedScene" uid="uid://dvk0xxmnrt60x" path="res://Prefabs/Nature/Mushrooms/RedFly.tscn" id="10_oj6q3"]
+[ext_resource type="PackedScene" uid="uid://up577vc03wpl" path="res://Prefabs/Nature/Mushrooms/Godotshroom.tscn" id="11_b5ol6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(96, 124)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vjb8f"]
 radius = 71.26
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu0n7"]
-size = Vector2(128, 128)
 
 [node name="Main Level" type="Node2D"]
 
@@ -37,6 +34,15 @@ offset_right = 1201.0
 offset_bottom = 4865.0
 texture = ExtResource("1_bs0lh")
 stretch_mode = 1
+
+[node name="Collectable" parent="Level" instance=ExtResource("9_bvbs8")]
+position = Vector2(150, 233)
+
+[node name="Collectable2" parent="Level" instance=ExtResource("10_oj6q3")]
+position = Vector2(8, 340)
+
+[node name="Collectable3" parent="Level" instance=ExtResource("11_b5ol6")]
+position = Vector2(318, 336)
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("playerSprite")]
 script = ExtResource("1_ceigu")
@@ -70,18 +76,4 @@ position = Vector2(0.045, 31.97)
 position = Vector2(33, 65)
 shape = SubResource("CircleShape2D_vjb8f")
 
-[node name="Interactable" type="Area2D" parent="."]
-position = Vector2(96.445, 0)
-script = ExtResource("7_vjb8f")
-
-[node name="Sprite2D" type="Sprite2D" parent="Interactable"]
-texture = ExtResource("4_vjb8f")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(-0.4449997, 0)
-shape = SubResource("RectangleShape2D_pu0n7")
-
 [node name="UI" parent="." instance=ExtResource("9_42i6i")]
-
-[node name="Collectable" parent="." instance=ExtResource("8_pu0n7")]
-position = Vector2(182, 208)

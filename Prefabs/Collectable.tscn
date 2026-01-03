@@ -1,21 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8y02pmni7yd4"]
+[gd_scene load_steps=3 format=3 uid="uid://c8y02pmni7yd4"]
 
 [ext_resource type="Script" uid="uid://8o3f680lv66c" path="res://ItemData/Collectable.gd" id="1_hpmtj"]
-[ext_resource type="Resource" uid="uid://dlg6uqjb8sup4" path="res://ItemData/Mushrooms/GodotShroom.tres" id="2_b7544"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rph0f"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kgjmj"]
 radius = 64.0
 
 [node name="Collectable" type="Node2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_hpmtj")
-itemData = ExtResource("2_b7544")
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("CompressedTexture2D_rph0f")
 
 [node name="Area2D" type="Area2D" parent="."]
 

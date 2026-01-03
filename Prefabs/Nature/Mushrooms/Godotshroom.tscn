@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://up577vc03wpl"]
+
+[ext_resource type="Script" uid="uid://8o3f680lv66c" path="res://ItemData/Collectable.gd" id="1_42xbn"]
+[ext_resource type="Resource" uid="uid://dlg6uqjb8sup4" path="res://ItemData/Mushrooms/GodotShroom.tres" id="2_34mva"]
+[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="3_nyh52"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kgjmj"]
+radius = 64.0
+
+[node name="Collectable" type="Node2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_42xbn")
+itemData = ExtResource("2_34mva")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_nyh52")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kgjmj")
