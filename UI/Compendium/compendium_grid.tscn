@@ -24,7 +24,9 @@ grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="AspectRatioContainer"]
 layout_mode = 2
-columns = 4
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 3
 
 [node name="CompendiumSlot" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
 layout_mode = 2
@@ -60,16 +62,4 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="CompendiumSlot12" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
-layout_mode = 2
-
-[node name="CompendiumSlot13" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
-layout_mode = 2
-
-[node name="CompendiumSlot14" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
-layout_mode = 2
-
-[node name="CompendiumSlot15" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
-layout_mode = 2
-
-[node name="CompendiumSlot16" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
 layout_mode = 2

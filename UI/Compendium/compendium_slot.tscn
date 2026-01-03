@@ -1,20 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://da452i2bmxe1g"]
+[gd_scene load_steps=6 format=3 uid="uid://da452i2bmxe1g"]
 
 [ext_resource type="Script" uid="uid://cww72n0gh6las" path="res://UI/Compendium/compendium_slot.gd" id="1_k02f4"]
 [ext_resource type="Shader" uid="uid://vo5iwp6qt37e" path="res://UI/Inventory/item_shader.gdshader" id="2_lq8om"]
-[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="3_0iwck"]
-[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/Fonts/Baliho.otf" id="4_jut52"]
+[ext_resource type="Texture2D" uid="uid://bim22svnyk1r4" path="res://Assets/Mushrooms/Mushroom - Generic.png" id="3_66hig"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5hg6"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.38431373)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k02f4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_twnjv"]
 shader = ExtResource("2_lq8om")
@@ -22,24 +12,18 @@ shader_parameter/silhouette_color = Color(0.80784315, 0.75686276, 0.7529412, 1)
 shader_parameter/silhouette_alpha_threshold = 0.1
 shader_parameter/do_silhouette = false
 
-[sub_resource type="LabelSettings" id="LabelSettings_bfyh4"]
-line_spacing = 0.0
-font = ExtResource("4_jut52")
-font_size = 32
-shadow_color = Color(0, 0, 0, 0.13725491)
-
-[node name="CompendiumSlot" type="AspectRatioContainer" node_paths=PackedStringArray("icon", "count")]
+[node name="CompendiumSlot" type="AspectRatioContainer" node_paths=PackedStringArray("icon")]
 offset_right = 136.0
 offset_bottom = 117.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_k02f4")
 icon = NodePath("Panel/MarginContainer/Icon")
-count = NodePath("Count")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_c5hg6")
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_k02f4")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 1
@@ -58,14 +42,5 @@ theme_override_constants/margin_bottom = 4
 [node name="Icon" type="TextureRect" parent="Panel/MarginContainer"]
 material = SubResource("ShaderMaterial_twnjv")
 layout_mode = 2
-texture = ExtResource("3_0iwck")
+texture = ExtResource("3_66hig")
 expand_mode = 1
-
-[node name="Count" type="Label" parent="."]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-text = "2 "
-label_settings = SubResource("LabelSettings_bfyh4")
-horizontal_alignment = 2
-vertical_alignment = 2

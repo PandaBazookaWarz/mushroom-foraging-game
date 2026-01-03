@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dshliqyvc8gs4"]
 
 [ext_resource type="Script" uid="uid://bnx38xps3705j" path="res://UI/ui_manager.gd" id="1_27fn8"]
-[ext_resource type="PackedScene" uid="uid://dlbl1fic8ch31" path="res://UI/Compendium/Compendium.tscn" id="2_nltto"]
-[ext_resource type="PackedScene" uid="uid://c6prjqedlpn2t" path="res://UI/Inventory/Inventory.tscn" id="3_ibotj"]
+[ext_resource type="PackedScene" uid="uid://dlbl1fic8ch31" path="res://UI/Compendium/compendium_ui.tscn" id="2_nltto"]
+[ext_resource type="PackedScene" uid="uid://c6prjqedlpn2t" path="res://UI/Inventory/inventory_ui.tscn" id="3_ibotj"]
 
 [node name="UI" type="CanvasLayer" node_paths=PackedStringArray("compendium_ui", "inventory_ui")]
 visible = false

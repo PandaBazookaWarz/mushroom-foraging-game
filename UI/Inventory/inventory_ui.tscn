@@ -1,113 +1,54 @@
-[gd_scene load_steps=11 format=3 uid="uid://chir6rj0er15s"]
+[gd_scene load_steps=4 format=3 uid="uid://c6prjqedlpn2t"]
 
-[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="1_4u4pm"]
-[ext_resource type="Script" uid="uid://boq2erq1r6r3p" path="res://UI/Inventory/inventory_ui.gd" id="1_q0abd"]
-[ext_resource type="PackedScene" uid="uid://hswrkl21eigi" path="res://UI/Inventory/inventory_grid.tscn" id="2_j47vt"]
-[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/Fonts/Baliho.otf" id="3_q0abd"]
+[ext_resource type="Script" uid="uid://boq2erq1r6r3p" path="res://UI/Inventory/inventory_ui.gd" id="1_sv8nv"]
+[ext_resource type="Texture2D" uid="uid://dka57sc45uy2m" path="res://Assets/UI/Inventory/Inventory UI - Background.png" id="1_uo64e"]
+[ext_resource type="PackedScene" uid="uid://hswrkl21eigi" path="res://UI/Inventory/inventory_grid.tscn" id="2_uo64e"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02fst"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lrx5d"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f7p5s"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_3a2qo"]
-font = ExtResource("3_q0abd")
-font_size = 48
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_4u4pm"]
-font = ExtResource("3_q0abd")
-font_size = 36
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dytd0"]
-
-[node name="InventoryPages" type="Panel" node_paths=PackedStringArray("inventory_grid")]
+[node name="Inventory" type="Control" node_paths=PackedStringArray("grid")]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_02fst")
-script = ExtResource("1_q0abd")
-inventory_grid = NodePath("HBoxContainer/RightPage/MarginContainer/InventoryGrid")
+script = ExtResource("1_sv8nv")
+grid = NodePath("BasketTexture/MarginContainer/InventoryGrid")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="BasketTexture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 864)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -739.49536
+offset_top = -432.0
+offset_right = 739.49536
+offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_uo64e")
+expand_mode = 3
+stretch_mode = 4
 
-[node name="LeftPage" type="Panel" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_lrx5d")
-
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeftPage"]
+[node name="MarginContainer" type="MarginContainer" parent="BasketTexture"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.06896595
+anchor_top = 0.098000005
+anchor_right = 0.93440914
+anchor_bottom = 0.8993056
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_left = 86
+theme_override_constants/margin_top = 86
+theme_override_constants/margin_right = 86
+theme_override_constants/margin_bottom = 86
+metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPage/MarginContainer"]
+[node name="InventoryGrid" parent="BasketTexture/MarginContainer" instance=ExtResource("2_uo64e")]
 layout_mode = 2
-alignment = 1
-
-[node name="Panel" type="Panel" parent="HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_f7p5s")
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("1_4u4pm")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
-
-[node name="Title" type="Label" parent="HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "This is some text!"
-label_settings = SubResource("LabelSettings_3a2qo")
-horizontal_alignment = 1
-
-[node name="EntryText" type="Label" parent="HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "This is some text!"
-label_settings = SubResource("LabelSettings_4u4pm")
-horizontal_alignment = 1
-
-[node name="RightPage" type="Panel" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dytd0")
-
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/RightPage"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
-
-[node name="InventoryGrid" parent="HBoxContainer/RightPage/MarginContainer" instance=ExtResource("2_j47vt")]
-layout_mode = 2
+script = null

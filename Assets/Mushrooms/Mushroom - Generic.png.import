@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bim22svnyk1r4"
-path="res://.godot/imported/Book UI - Generic Mushroom.png-6577b45f4883b52dba5bb711473a4958.ctex"
+path="res://.godot/imported/Mushroom - Generic.png-23016962f684ed35ed9671df5e8f676f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Book/Book UI - Generic Mushroom.png"
-dest_files=["res://.godot/imported/Book UI - Generic Mushroom.png-6577b45f4883b52dba5bb711473a4958.ctex"]
+source_file="res://Assets/Mushrooms/Mushroom - Generic.png"
+dest_files=["res://.godot/imported/Mushroom - Generic.png-23016962f684ed35ed9671df5e8f676f.ctex"]
 
 [params]
 
