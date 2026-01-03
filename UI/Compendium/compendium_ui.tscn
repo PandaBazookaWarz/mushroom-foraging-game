@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt53rpmnal505"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02fst"]
+
+[node name="CompendiumPages" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_02fst")

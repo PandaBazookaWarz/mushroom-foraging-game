@@ -7,4 +7,5 @@ class_name ItemData
 @export var icon: Texture2D
 @export var stackable: bool = true
 @export var max_stack: int = 99
+@export var unlocked: bool = false
 @export var description: String

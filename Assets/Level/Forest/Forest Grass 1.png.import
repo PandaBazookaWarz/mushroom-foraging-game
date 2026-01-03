@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cy4on2rbe8lxy"
-path="res://.godot/imported/Forest Grass 1.png-611a69a03d03a3304ccc841877580023.ctex"
+path="res://.godot/imported/Forest Grass 1.png-e8694e576a294f46885aecc43a55e7da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level/Forest/Forest Grass 1.png"
-dest_files=["res://.godot/imported/Forest Grass 1.png-611a69a03d03a3304ccc841877580023.ctex"]
+source_file="res://Assets/Level/Forest/Forest Grass 1.png"
+dest_files=["res://.godot/imported/Forest Grass 1.png-e8694e576a294f46885aecc43a55e7da.ctex"]
 
 [params]
 

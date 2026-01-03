@@ -1,0 +1,157 @@
+[gd_scene load_steps=12 format=3 uid="uid://dlbl1fic8ch31"]
+
+[ext_resource type="Script" uid="uid://domfjrvpjt2ud" path="res://UI/Compendium/compendium_ui.gd" id="1_q40mr"]
+[ext_resource type="Texture2D" uid="uid://dta6w4kf3ghna" path="res://Assets/UI/Book/Book UI - Binding.png" id="2_xentw"]
+[ext_resource type="Texture2D" uid="uid://cwxe62xalx15v" path="res://Assets/UI/Book/Book UI - Pages.png" id="3_7f5ll"]
+[ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="4_gp6wo"]
+[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/Fonts/Baliho.otf" id="5_tckdh"]
+[ext_resource type="PackedScene" uid="uid://cxptduwq0l4ge" path="res://UI/Compendium/compendium_grid.tscn" id="6_16q02"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y256l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t7w84"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q30wg"]
+font = ExtResource("5_tckdh")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cs6tc"]
+font = ExtResource("5_tckdh")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qbqb7"]
+
+[node name="Compendium" type="Control" node_paths=PackedStringArray("grid")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q40mr")
+grid = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/RightPage/MarginContainer/CompendiumGrid")
+
+[node name="BindingTexture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 864)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -619.3433
+offset_top = -432.0
+offset_right = 619.3433
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_xentw")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="BindingTexture"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 24
+
+[node name="PagesTexture" type="TextureRect" parent="BindingTexture/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_7f5ll")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="BindingTexture/MarginContainer/PagesTexture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 96
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LeftPage" type="Panel" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_y256l")
+
+[node name="MarginContainer" type="MarginContainer" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Panel" type="Panel" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_t7w84")
+
+[node name="TextureRect" type="TextureRect" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_gp6wo")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Title" type="Label" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "This is some text!"
+label_settings = SubResource("LabelSettings_q30wg")
+horizontal_alignment = 1
+
+[node name="EntryText" type="Label" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "This is some text!"
+label_settings = SubResource("LabelSettings_cs6tc")
+horizontal_alignment = 1
+
+[node name="RightPage" type="Panel" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qbqb7")
+
+[node name="MarginContainer" type="MarginContainer" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/RightPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="CompendiumGrid" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/RightPage/MarginContainer" instance=ExtResource("6_16q02")]
+layout_mode = 2

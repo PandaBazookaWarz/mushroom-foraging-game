@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxptduwq0l4ge"]
+
+[ext_resource type="PackedScene" uid="uid://da452i2bmxe1g" path="res://UI/Compendium/compendium_slot.tscn" id="1_2sgx8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alpu4"]
+
+[node name="CompendiumGrid" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_alpu4")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="CompendiumSlot" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot2" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot3" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot4" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot5" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot6" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot7" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot8" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot9" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot10" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot11" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot12" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot13" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot14" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot15" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2
+
+[node name="CompendiumSlot16" parent="AspectRatioContainer/GridContainer" instance=ExtResource("1_2sgx8")]
+layout_mode = 2

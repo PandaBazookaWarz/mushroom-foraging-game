@@ -19,9 +19,13 @@ func _process(delta: float) -> void:
 			handle_interact()
 			
 	if (Input.is_action_just_pressed("inventory")):
-		GameManager.compendium.inventory_visualization.toggle_inventory()
+		GameManager.ui_manager.switch_ui(UIManager.ui_screens.Inventory)
 		
-		
+	if (Input.is_action_just_pressed("compendium")):
+		GameManager.ui_manager.switch_ui(UIManager.ui_screens.Compendium)
+	
+	if (Input.is_action_just_pressed("escape")):
+		GameManager.ui_manager.switch_ui(UIManager.ui_screens.None)
 		
 func handle_animation(delta):
 	var player_input = get_input()
