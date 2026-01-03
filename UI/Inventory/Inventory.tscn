@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6prjqedlpn2t"]
+
+[ext_resource type="Script" uid="uid://boq2erq1r6r3p" path="res://UI/Inventory/inventory_ui.gd" id="1_sv8nv"]
+[ext_resource type="Texture2D" uid="uid://dka57sc45uy2m" path="res://Assets/UI/Inventory/Inventory UI - Background.png" id="1_uo64e"]
+[ext_resource type="PackedScene" uid="uid://hswrkl21eigi" path="res://UI/Inventory/inventory_grid.tscn" id="2_uo64e"]
+
+[node name="Inventory" type="Control" node_paths=PackedStringArray("grid")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sv8nv")
+grid = NodePath("BasketTexture/MarginContainer/InventoryGrid")
+
+[node name="BasketTexture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 864)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -739.49536
+offset_top = -432.0
+offset_right = 739.49536
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_uo64e")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="BasketTexture"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06896595
+anchor_top = 0.098000005
+anchor_right = 0.93440914
+anchor_bottom = 0.8993056
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 86
+theme_override_constants/margin_top = 86
+theme_override_constants/margin_right = 86
+theme_override_constants/margin_bottom = 86
+metadata/_edit_use_anchors_ = true
+
+[node name="InventoryGrid" parent="BasketTexture/MarginContainer" instance=ExtResource("2_uo64e")]
+layout_mode = 2
+script = null

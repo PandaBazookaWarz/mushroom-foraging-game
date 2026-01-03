@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://c7b4wobu0eojo"]
 
-[ext_resource type="Texture2D" uid="uid://cy4on2rbe8lxy" path="res://Level/Forest/Forest Grass 1.png" id="1_bs0lh"]
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_ceigu"]
+[ext_resource type="Texture2D" uid="uid://cy4on2rbe8lxy" path="res://Assets/Level/Forest/Forest Grass 1.png" id="1_bs0lh"]
+[ext_resource type="Script" uid="uid://cjesbcgk6tpub" path="res://Player/Player.gd" id="1_ceigu"]
 [ext_resource type="Script" uid="uid://cc75ll7k2pkqm" path="res://Player/player_float_animation.gd" id="2_uxobj"]
 [ext_resource type="Texture2D" uid="uid://d1pstv6w5e1h1" path="res://Player/Player.png" id="3_bs0lh"]
 [ext_resource type="Texture2D" uid="uid://ki4yq6mheohc" path="res://Player/Player Shadow.png" id="4_uxobj"]
 [ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="4_vjb8f"]
-[ext_resource type="Script" uid="uid://b0c13e4w6gse" path="res://Items/Interactable.gd" id="7_vjb8f"]
-[ext_resource type="PackedScene" uid="uid://c8y02pmni7yd4" path="res://Items/Collectable.tscn" id="8_pu0n7"]
-[ext_resource type="PackedScene" uid="uid://dlbl1fic8ch31" path="res://UI/Compendium/Compendium.tscn" id="9_42i6i"]
+[ext_resource type="Script" uid="uid://b0c13e4w6gse" path="res://ItemData/Interactable.gd" id="7_vjb8f"]
+[ext_resource type="PackedScene" uid="uid://c8y02pmni7yd4" path="res://ItemData/Collectable.tscn" id="8_pu0n7"]
+[ext_resource type="PackedScene" uid="uid://dshliqyvc8gs4" path="res://UI/ui.tscn" id="9_42i6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(96, 124)
@@ -84,5 +84,4 @@ shape = SubResource("RectangleShape2D_pu0n7")
 [node name="Collectable" parent="." instance=ExtResource("8_pu0n7")]
 position = Vector2(415, 201)
 
-[node name="Compendium" parent="." instance=ExtResource("9_42i6i")]
-visible = false
+[node name="UI" parent="." instance=ExtResource("9_42i6i")]
