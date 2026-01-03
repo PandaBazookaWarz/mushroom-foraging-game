@@ -29,10 +29,13 @@ func switch_ui(to_ui) -> void:
 			ui_page.open()
 			ui_page.visible = true
 		active_ui = to_ui
-		visible = true
 	else:
 		active_ui = ui_screens.None
 		
 	if (active_ui == ui_screens.None):
 		visible = false
+		GameManager.paused = false
+	else:
+		visible = true
+		GameManager.paused = true
 		
