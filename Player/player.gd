@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 			handle_interact()
 			
 	if (Input.is_action_just_pressed("inventory")):
-		GameManager.compendium.inventory_visualization.toggle_inventory()
+		GameManager.compendium.visualization.toggle()
 		
 		
 		

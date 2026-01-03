@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://dt53rpmnal505"]
 
-[ext_resource type="Script" uid="uid://boq2erq1r6r3p" path="res://UI/Inventory/inventory_pages.gd" id="1_mtmcn"]
+[ext_resource type="Script" uid="uid://domfjrvpjt2ud" path="res://UI/Compendium/compendium_pages.gd" id="1_nsjok"]
 [ext_resource type="Texture2D" uid="uid://c7gu8h2xwfwgh" path="res://Assets/icon.svg" id="2_nmu6k"]
 [ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/Fonts/Baliho.otf" id="3_f5r1w"]
-[ext_resource type="PackedScene" uid="uid://hswrkl21eigi" path="res://UI/Inventory/inventory_grid.tscn" id="4_143oh"]
+[ext_resource type="PackedScene" uid="uid://cxptduwq0l4ge" path="res://UI/Compendium/compendium_grid.tscn" id="4_nsjok"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02fst"]
 
@@ -30,8 +30,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_02fst")
-script = ExtResource("1_mtmcn")
-inventory_grid = NodePath("HBoxContainer/RightPage/MarginContainer/InventoryGrid")
+script = ExtResource("1_nsjok")
+inventory_grid = NodePath("HBoxContainer/RightPage/MarginContainer/CompendiumGrid")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -109,5 +109,5 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="InventoryGrid" parent="HBoxContainer/RightPage/MarginContainer" instance=ExtResource("4_143oh")]
+[node name="CompendiumGrid" parent="HBoxContainer/RightPage/MarginContainer" instance=ExtResource("4_nsjok")]
 layout_mode = 2
