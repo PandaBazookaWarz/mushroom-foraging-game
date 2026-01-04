@@ -8,15 +8,18 @@
 font = ExtResource("2_xkxcb")
 font_size = 36
 
-[node name="StickyNote" type="TextureRect"]
+[node name="StickyNote" type="TextureRect" node_paths=PackedStringArray("label")]
 offset_left = 41.343384
 offset_top = -98.0
 offset_right = 208.34338
 offset_bottom = 6.0
+mouse_filter = 0
 texture = ExtResource("1_u5jg0")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_n5q02")
+filter = 5
+label = NodePath("CenterContainer/VBoxContainer/Label")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -32,9 +35,19 @@ offset_bottom = 21.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Forest"
+label_settings = SubResource("LabelSettings_n5q02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
 label_settings = SubResource("LabelSettings_n5q02")
 horizontal_alignment = 1
 vertical_alignment = 1

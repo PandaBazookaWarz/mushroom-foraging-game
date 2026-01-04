@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlbl1fic8ch31"]
+[gd_scene load_steps=18 format=3 uid="uid://dlbl1fic8ch31"]
 
 [ext_resource type="Script" uid="uid://domfjrvpjt2ud" path="res://UI/Compendium/compendium_ui.gd" id="1_leaqf"]
 [ext_resource type="Texture2D" uid="uid://dta6w4kf3ghna" path="res://Assets/UI/Book/Book UI - Binding.png" id="2_sygbi"]
@@ -6,6 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cjqndonm5gyt1" path="res://UI/Compendium/sticky_note.tscn" id="5_leaqf"]
 [ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/Fonts/Baliho.otf" id="5_v6lhl"]
 [ext_resource type="PackedScene" uid="uid://cxptduwq0l4ge" path="res://UI/Compendium/compendium_grid.tscn" id="6_tepg8"]
+[ext_resource type="Texture2D" uid="uid://hcacicwni7ev" path="res://Assets/UI/Book/Book UI - Peach Sticky.png" id="6_uy4tt"]
+[ext_resource type="Texture2D" uid="uid://beu6ma3a4xkey" path="res://Assets/UI/Book/Book UI - Purple Sticky.png" id="7_l8nhj"]
+[ext_resource type="Texture2D" uid="uid://fsv7py7518gy" path="res://Assets/UI/Book/Book UI - Brown Sticky.png" id="8_5lmrg"]
+[ext_resource type="Texture2D" uid="uid://vi4stqacg0qy" path="res://Assets/UI/Book/Book UI - Green Sticky.png" id="9_6f1x8"]
+[ext_resource type="Texture2D" uid="uid://e13utm4j0gqo" path="res://Assets/UI/Book/Book UI - Red Sticky.png" id="10_pwfu5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tepg8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y256l"]
 
@@ -23,7 +30,7 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qbqb7"]
 
-[node name="Compendium" type="Control" node_paths=PackedStringArray("grid", "icon", "title", "description")]
+[node name="Compendium" type="Control" node_paths=PackedStringArray("grid", "icon", "title", "description", "pages")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,6 +42,7 @@ grid = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBo
 icon = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/Icon")
 title = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer/Title")
 description = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer/EntryText")
+pages = NodePath("BindingTexture/MarginContainer/PagesTexture")
 
 [node name="BindingTexture" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(0, 864)
@@ -52,9 +60,72 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("2_sygbi")
-expand_mode = 3
+expand_mode = 1
 stretch_mode = 4
+
+[node name="Stickies" type="Panel" parent="BindingTexture"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 9.0
+offset_right = 1214.0
+offset_bottom = 864.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tepg8")
+
+[node name="StickyNote5" parent="BindingTexture/Stickies" instance=ExtResource("5_leaqf")]
+layout_mode = 0
+offset_left = 968.3434
+offset_top = -45.0
+offset_right = 1135.3434
+offset_bottom = 59.0
+texture = ExtResource("6_uy4tt")
+filter = 4
+
+[node name="StickyNote6" parent="BindingTexture/Stickies" instance=ExtResource("5_leaqf")]
+layout_mode = 0
+offset_left = 798.3434
+offset_top = -56.0
+offset_right = 965.3434
+offset_bottom = 48.0
+filter = 0
+
+[node name="StickyNote4" parent="BindingTexture/Stickies" instance=ExtResource("5_leaqf")]
+layout_mode = 0
+offset_left = 628.3434
+offset_top = -51.0
+offset_right = 795.3434
+offset_bottom = 53.0
+texture = ExtResource("7_l8nhj")
+filter = 3
+
+[node name="StickyNote3" parent="BindingTexture/Stickies" instance=ExtResource("5_leaqf")]
+layout_mode = 0
+offset_left = 391.34338
+offset_top = -54.0
+offset_right = 558.3434
+offset_bottom = 50.0
+texture = ExtResource("8_5lmrg")
+filter = 2
+
+[node name="StickyNote2" parent="BindingTexture/Stickies" instance=ExtResource("5_leaqf")]
+layout_mode = 0
+offset_left = 225.34338
+offset_top = -54.0
+offset_right = 392.34338
+offset_bottom = 50.0
+texture = ExtResource("9_6f1x8")
+
+[node name="StickyNote" parent="BindingTexture/Stickies" instance=ExtResource("5_leaqf")]
+z_index = 1
+layout_mode = 0
+offset_left = 56.343384
+offset_top = -49.0
+offset_right = 223.34338
+offset_bottom = 55.0
+texture = ExtResource("10_pwfu5")
+filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="BindingTexture"]
 layout_mode = 1
@@ -63,6 +134,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 9
 theme_override_constants/margin_right = 24
@@ -70,7 +142,7 @@ theme_override_constants/margin_right = 24
 [node name="PagesTexture" type="TextureRect" parent="BindingTexture/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("3_w7bq4")
-expand_mode = 5
+expand_mode = 1
 stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="BindingTexture/MarginContainer/PagesTexture"]
@@ -80,6 +152,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
@@ -139,13 +212,6 @@ text = "This is the description of the item selected."
 label_settings = SubResource("LabelSettings_cs6tc")
 horizontal_alignment = 1
 autowrap_mode = 3
-
-[node name="StickyNote" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage" instance=ExtResource("5_leaqf")]
-layout_mode = 0
-offset_left = 35.343384
-offset_top = -80.0
-offset_right = 202.34338
-offset_bottom = 24.0
 
 [node name="RightPage" type="Panel" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer"]
 layout_mode = 2

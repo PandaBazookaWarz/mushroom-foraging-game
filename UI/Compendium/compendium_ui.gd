@@ -6,6 +6,8 @@ class_name CompendiumUI
 @export var icon: TextureRect
 @export var title: Label
 @export var description: Label
+@export var pages: TextureRect
+@onready var active_filter: ItemData.Biomes = ItemData.Biomes.Common
 
 
 func _ready() -> void:
@@ -17,9 +19,13 @@ func _ready() -> void:
 	update_vis()
 	
 func update_vis():
-	var items = GameManager.inventory.items.duplicate_deep()
+	GameManager.compendium_log.items.sort_custom(func(a, b): return a.item.name < b.item.name)
+	var items: Array[ItemStack] = GameManager.compendium_log.items.duplicate_deep()
+	
 	var slots_copy = slots.duplicate_deep()
 	for item in items:
+		if item.item.biome != active_filter:
+			continue
 		var slot = slots_copy.pop_front()
 		slot.item_stack = item
 		slot.update_visual()
@@ -41,3 +47,19 @@ func open():
 	
 func close():
 	pass
+
+func filter(f: ItemData.Biomes):
+	if active_filter == f:
+		return
+	title.text = ""
+	description.text = ""
+	icon.texture = null
+	active_filter = f
+	update_vis()
+	for sticky in get_tree().get_nodes_in_group("stickies"):
+		if sticky.filter != f:
+			sticky.z_index = pages.z_index
+		else:
+			sticky.z_index = pages.z_index+1
+	
+	

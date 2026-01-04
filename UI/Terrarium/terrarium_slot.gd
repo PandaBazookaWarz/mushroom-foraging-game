@@ -1,12 +1,12 @@
 extends Control
-class_name InventorySlot
+class_name TerrariumSlot
 
 @onready var item_stack: ItemStack
 @export var icon: TextureRect
 @export var count: Label
 
 func _ready():
-	add_to_group("inventory_slots")
+	add_to_group("terrarium_slots")
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.pressed:

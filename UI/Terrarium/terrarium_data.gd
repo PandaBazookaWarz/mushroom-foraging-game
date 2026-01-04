@@ -1,5 +1,5 @@
 extends Node
-class_name InventoryData
+class_name TerrariumData
 
 var capacity: int = 15
 @onready var items: Array[ItemStack] = []

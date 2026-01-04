@@ -3,9 +3,10 @@ class_name UIManager
 
 var ui_nodes: Array[Node]
 var active_ui: ui_screens = ui_screens.None
-enum ui_screens {Compendium, Inventory, None}
+enum ui_screens {Compendium, Inventory, Terrarium, None}
 @export var compendium_ui: Control
 @export var inventory_ui: Control
+@export var terrarium_ui: Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,14 +26,19 @@ func switch_ui(to_ui) -> void:
 				ui_page = compendium_ui
 			ui_screens.Inventory:
 				ui_page = inventory_ui
+			ui_screens.Terrarium:
+				ui_page = terrarium_ui
 		if ui_page:
 			ui_page.open()
 			ui_page.visible = true
 		active_ui = to_ui
-		visible = true
 	else:
 		active_ui = ui_screens.None
 		
 	if (active_ui == ui_screens.None):
 		visible = false
+		GameManager.paused = false
+	else:
+		visible = true
+		GameManager.paused = true
 		

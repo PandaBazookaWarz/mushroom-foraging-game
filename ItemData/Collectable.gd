@@ -15,3 +15,4 @@ func _ready() -> void:
 func interact(interactor):
 	print("pick up "+ itemData.name)
 	GameManager.inventory.add(itemData)
+	GameManager.compendium_log.add(itemData)

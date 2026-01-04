@@ -10,3 +10,5 @@ name = "White Button"
 icon = ExtResource("1_lk5ka")
 max_stack = 10
 description = "A staple around here. Versatile, yummy when chopped fine."
+biome = 1
+type = 1

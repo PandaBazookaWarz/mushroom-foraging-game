@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6prjqedlpn2t"]
+[gd_scene load_steps=4 format=3 uid="uid://cx2etecsnxl5r"]
 
-[ext_resource type="Script" uid="uid://boq2erq1r6r3p" path="res://UI/Inventory/inventory_ui.gd" id="1_sv8nv"]
-[ext_resource type="Texture2D" uid="uid://dka57sc45uy2m" path="res://Assets/UI/Inventory/Inventory UI - Background.png" id="1_uo64e"]
-[ext_resource type="PackedScene" uid="uid://hswrkl21eigi" path="res://UI/Inventory/inventory_grid.tscn" id="2_uo64e"]
+[ext_resource type="Script" uid="uid://dkxhm3fjqkpbc" path="res://UI/Terrarium/terrarium_ui.gd" id="1_wy0u1"]
+[ext_resource type="Texture2D" uid="uid://dka57sc45uy2m" path="res://Assets/UI/Inventory/Inventory UI - Background.png" id="2_n1ms6"]
+[ext_resource type="PackedScene" uid="uid://64hnwc6ose15" path="res://UI/Terrarium/terrarium_grid.tscn" id="3_wy0u1"]
 
-[node name="Inventory" type="Control" node_paths=PackedStringArray("grid")]
+[node name="Terrarium" type="Control" node_paths=PackedStringArray("grid")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sv8nv")
-grid = NodePath("BasketTexture/MarginContainer/InventoryGrid")
+script = ExtResource("1_wy0u1")
+grid = NodePath("BasketTexture/MarginContainer/TerrariumGrid")
 
 [node name="BasketTexture" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(0, 864)
@@ -30,7 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_uo64e")
+texture = ExtResource("2_n1ms6")
 expand_mode = 3
 stretch_mode = 4
 
@@ -49,5 +49,5 @@ theme_override_constants/margin_right = 86
 theme_override_constants/margin_bottom = 86
 metadata/_edit_use_anchors_ = true
 
-[node name="InventoryGrid" parent="BasketTexture/MarginContainer" instance=ExtResource("2_uo64e")]
+[node name="TerrariumGrid" parent="BasketTexture/MarginContainer" instance=ExtResource("3_wy0u1")]
 layout_mode = 2
