@@ -8,9 +8,9 @@
 [node name="UI" type="CanvasLayer" node_paths=PackedStringArray("compendium_ui", "inventory_ui", "terrarium_ui")]
 visible = false
 script = ExtResource("1_27fn8")
-compendium_ui = NodePath("FocusTransparency/MarginContainer/CenterContainer/Compendium")
-inventory_ui = NodePath("FocusTransparency/MarginContainer/CenterContainer/Inventory")
-terrarium_ui = NodePath("FocusTransparency/MarginContainer/CenterContainer/Terrarium")
+compendium_ui = NodePath("FocusTransparency/MarginContainer/Compendium")
+inventory_ui = NodePath("FocusTransparency/MarginContainer/Inventory")
+terrarium_ui = NodePath("FocusTransparency/MarginContainer/Terrarium")
 
 [node name="FocusTransparency" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -32,14 +32,14 @@ theme_override_constants/margin_top = 18
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 18
 
-[node name="CenterContainer" type="CenterContainer" parent="FocusTransparency/MarginContainer"]
+[node name="Compendium" parent="FocusTransparency/MarginContainer" instance=ExtResource("2_nltto")]
+visible = false
 layout_mode = 2
 
-[node name="Compendium" parent="FocusTransparency/MarginContainer/CenterContainer" instance=ExtResource("2_nltto")]
+[node name="Inventory" parent="FocusTransparency/MarginContainer" instance=ExtResource("3_ibotj")]
+visible = false
 layout_mode = 2
 
-[node name="Inventory" parent="FocusTransparency/MarginContainer/CenterContainer" instance=ExtResource("3_ibotj")]
-layout_mode = 2
-
-[node name="Terrarium" parent="FocusTransparency/MarginContainer/CenterContainer" instance=ExtResource("4_hat8c")]
+[node name="Terrarium" parent="FocusTransparency/MarginContainer" instance=ExtResource("4_hat8c")]
+visible = false
 layout_mode = 2

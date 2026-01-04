@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx2etecsnxl5r"]
+[gd_scene load_steps=5 format=3 uid="uid://cx2etecsnxl5r"]
 
 [ext_resource type="Script" uid="uid://dkxhm3fjqkpbc" path="res://UI/Terrarium/terrarium_ui.gd" id="1_wy0u1"]
-[ext_resource type="Texture2D" uid="uid://dka57sc45uy2m" path="res://Assets/UI/Inventory/Inventory UI - Background.png" id="2_n1ms6"]
+[ext_resource type="Texture2D" uid="uid://6axosxmbk6rj" path="res://Assets/UI/Icons/Icon UI - Arrow.png" id="2_wy0u1"]
 [ext_resource type="PackedScene" uid="uid://64hnwc6ose15" path="res://UI/Terrarium/terrarium_grid.tscn" id="3_wy0u1"]
+[ext_resource type="Texture2D" uid="uid://3gsituro6s53" path="res://Assets/Items/Basic Jar Closed.png" id="4_d0dee"]
 
 [node name="Terrarium" type="Control" node_paths=PackedStringArray("grid")]
 layout_mode = 3
@@ -12,42 +13,69 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wy0u1")
-grid = NodePath("BasketTexture/MarginContainer/TerrariumGrid")
+grid = NodePath("VBoxContainer/HBoxContainer/MarginContainer/TerrariumGrid")
 
-[node name="BasketTexture" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(0, 864)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -739.49536
-offset_top = -432.0
-offset_right = 739.49536
-offset_bottom = 432.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_n1ms6")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="BasketTexture"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.06896595
-anchor_top = 0.098000005
-anchor_right = 0.93440914
-anchor_bottom = 0.8993056
+anchor_left = 0.25
+anchor_right = 0.75
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 86
-theme_override_constants/margin_top = 86
-theme_override_constants/margin_right = 86
-theme_override_constants/margin_bottom = 86
-metadata/_edit_use_anchors_ = true
+alignment = 1
 
-[node name="TerrariumGrid" parent="BasketTexture/MarginContainer" instance=ExtResource("3_wy0u1")]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("2_wy0u1")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TerrariumGrid" parent="VBoxContainer/HBoxContainer/MarginContainer" instance=ExtResource("3_wy0u1")]
+layout_mode = 2
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/AspectRatioContainer2"]
+layout_mode = 2
+texture = ExtResource("2_wy0u1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_d0dee")
+expand_mode = 1
+stretch_mode = 5
