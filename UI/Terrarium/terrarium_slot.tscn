@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bu4hpue1yegv7" path="res://UI/Terrarium/terrarium_slot.gd" id="1_vm0sm"]
 [ext_resource type="Texture2D" uid="uid://0vmpmi35pbho" path="res://Assets/UI/General/General UI - Box.png" id="2_b454c"]
 [ext_resource type="Shader" uid="uid://vo5iwp6qt37e" path="res://UI/Inventory/item_shader.gdshader" id="3_pqlb4"]
-[ext_resource type="Texture2D" uid="uid://l83uil4lnvq" path="res://Assets/Mushrooms/Mushroom - Common.png" id="4_o8ikt"]
+[ext_resource type="Texture2D" uid="uid://l83uil4lnvq" path="res://Assets/Items/Mushrooms/Mushroom - Common.png" id="4_o8ikt"]
 [ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/Fonts/Baliho.otf" id="5_obuy1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_twnjv"]
@@ -19,8 +19,11 @@ font_size = 32
 shadow_color = Color(0, 0, 0, 0.13725491)
 
 [node name="TerrariumSlot" type="AspectRatioContainer" node_paths=PackedStringArray("icon", "count")]
-offset_right = 135.0
-offset_bottom = 123.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_vm0sm")
