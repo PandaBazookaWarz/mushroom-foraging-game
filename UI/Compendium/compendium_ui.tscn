@@ -62,7 +62,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 texture = ExtResource("2_sygbi")
-expand_mode = 3
+expand_mode = 1
 stretch_mode = 4
 
 [node name="Stickies" type="Panel" parent="BindingTexture"]
@@ -142,7 +142,7 @@ theme_override_constants/margin_right = 24
 [node name="PagesTexture" type="TextureRect" parent="BindingTexture/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("3_w7bq4")
-expand_mode = 5
+expand_mode = 1
 stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="BindingTexture/MarginContainer/PagesTexture"]

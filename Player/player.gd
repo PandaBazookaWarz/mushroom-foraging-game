@@ -23,6 +23,9 @@ func _process(delta: float) -> void:
 		
 	if (Input.is_action_just_pressed("compendium")):
 		GameManager.ui_manager.switch_ui(UIManager.ui_screens.Compendium)
+		
+	if (Input.is_action_just_pressed("terrarium")):
+		GameManager.ui_manager.switch_ui(UIManager.ui_screens.Terrarium)
 	
 	if (Input.is_action_just_pressed("escape")):
 		GameManager.ui_manager.switch_ui(UIManager.ui_screens.None)
