@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8o3f680lv66c" path="res://ItemData/Collectable.gd" id="1_qs78y"]
 [ext_resource type="Resource" uid="uid://xpq4wp3lc35v" path="res://ItemData/Mushrooms/WhiteButton.tres" id="2_2t5wx"]
-[ext_resource type="Texture2D" uid="uid://cyewntlm4oooa" path="res://Assets/Mushrooms/Mushroom - Red Fly.png" id="3_7vp0c"]
+[ext_resource type="Texture2D" uid="uid://cyewntlm4oooa" path="res://Assets/Items/Mushrooms/Mushroom - Red Fly.png" id="3_7vp0c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kgjmj"]
 radius = 46.0

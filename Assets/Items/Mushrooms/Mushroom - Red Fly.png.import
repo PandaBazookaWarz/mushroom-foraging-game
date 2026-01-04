@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l83uil4lnvq"
-path="res://.godot/imported/Mushroom - Common.png-0569f436fc81adef550cb376a8043364.ctex"
+uid="uid://cyewntlm4oooa"
+path="res://.godot/imported/Mushroom - Red Fly.png-81207405a411405dcd6c63a4eaa5c182.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Mushrooms/Mushroom - Common.png"
-dest_files=["res://.godot/imported/Mushroom - Common.png-0569f436fc81adef550cb376a8043364.ctex"]
+source_file="res://Assets/Items/Mushrooms/Mushroom - Red Fly.png"
+dest_files=["res://.godot/imported/Mushroom - Red Fly.png-81207405a411405dcd6c63a4eaa5c182.ctex"]
 
 [params]
 

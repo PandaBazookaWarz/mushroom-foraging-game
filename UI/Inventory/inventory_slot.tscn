@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dx5hyhhoxa4d5"]
 
 [ext_resource type="Script" uid="uid://7mdk5sqov7pm" path="res://UI/Inventory/inventory_slot.gd" id="1_c5hg6"]
-[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/Fonts/Baliho.otf" id="2_c5hg6"]
+[ext_resource type="FontFile" uid="uid://cpt61ep2tgvrg" path="res://Assets/fonts/Baliho.otf" id="2_c5hg6"]
 [ext_resource type="Shader" uid="uid://vo5iwp6qt37e" path="res://UI/Inventory/item_shader.gdshader" id="2_rlrfq"]
 [ext_resource type="Texture2D" uid="uid://0vmpmi35pbho" path="res://Assets/UI/General/General UI - Box.png" id="2_twnjv"]
-[ext_resource type="Texture2D" uid="uid://l83uil4lnvq" path="res://Assets/Mushrooms/Mushroom - Common.png" id="4_twnjv"]
+[ext_resource type="Texture2D" uid="uid://l83uil4lnvq" path="res://Assets/Items/Mushrooms/Mushroom - Common.png" id="4_twnjv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_twnjv"]
 shader = ExtResource("2_rlrfq")

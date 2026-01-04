@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bogp7782amhxj"
-path="res://.godot/imported/Hud UI - Terrarium.png-5ebca28810f2f8110a700782ec74e6c9.ctex"
+uid="uid://dc7rrcuyk7s7"
+path="res://.godot/imported/Plant Item - Dark Green Succulent.png-58fe65ef1ca7c281aca521f15830ec01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Hud/Hud UI - Terrarium.png"
-dest_files=["res://.godot/imported/Hud UI - Terrarium.png-5ebca28810f2f8110a700782ec74e6c9.ctex"]
+source_file="res://Assets/Items/Plants/Plant Item - Dark Green Succulent.png"
+dest_files=["res://.godot/imported/Plant Item - Dark Green Succulent.png-58fe65ef1ca7c281aca521f15830ec01.ctex"]
 
 [params]
 

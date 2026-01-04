@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://xpq4wp3lc35v"]
 
-[ext_resource type="Texture2D" uid="uid://l83uil4lnvq" path="res://Assets/Mushrooms/Mushroom - Common.png" id="1_lk5ka"]
-[ext_resource type="Script" uid="uid://brnu30qldpksj" path="res://ItemData/ItemData.gd" id="2_2sieh"]
+[ext_resource type="Texture2D" uid="uid://l83uil4lnvq" path="res://Assets/Items/Mushrooms/Mushroom - Common.png" id="1_lk5ka"]
+[ext_resource type="Script" path="res://ItemData/ItemData.gd" id="2_2sieh"]
 
 [resource]
 script = ExtResource("2_2sieh")

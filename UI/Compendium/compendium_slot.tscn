@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cww72n0gh6las" path="res://UI/Compendium/compendium_slot.gd" id="1_k02f4"]
 [ext_resource type="Shader" uid="uid://vo5iwp6qt37e" path="res://UI/Inventory/item_shader.gdshader" id="2_lq8om"]
-[ext_resource type="Texture2D" uid="uid://bim22svnyk1r4" path="res://Assets/Mushrooms/Mushroom - Generic.png" id="3_66hig"]
+[ext_resource type="Texture2D" uid="uid://bim22svnyk1r4" path="res://Assets/Items/Mushrooms/Mushroom - Generic.png" id="3_66hig"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k02f4"]
 

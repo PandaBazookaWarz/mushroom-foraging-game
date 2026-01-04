@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://c7b4wobu0eojo"]
 
 [ext_resource type="Texture2D" uid="uid://cy4on2rbe8lxy" path="res://Assets/Level/Forest/Forest Grass 1.png" id="1_bs0lh"]
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_ceigu"]
+[ext_resource type="Script" uid="uid://cjesbcgk6tpub" path="res://Player/Player.gd" id="1_ceigu"]
 [ext_resource type="Script" uid="uid://cc75ll7k2pkqm" path="res://Player/player_float_animation.gd" id="2_uxobj"]
 [ext_resource type="Texture2D" uid="uid://d1pstv6w5e1h1" path="res://Player/Player.png" id="3_bs0lh"]
 [ext_resource type="Texture2D" uid="uid://ki4yq6mheohc" path="res://Player/Player Shadow.png" id="4_uxobj"]
