@@ -10,3 +10,5 @@ name = "Godotshroom"
 icon = ExtResource("1_rrp87")
 max_stack = 10
 description = "A mushroom that tastes... better than a Unityshroom."
+biome = 6
+type = 1

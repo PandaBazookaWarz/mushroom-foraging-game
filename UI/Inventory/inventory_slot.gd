@@ -1,7 +1,7 @@
 extends Control
 class_name InventorySlot
 
-@onready var item_stack
+@onready var item_stack: ItemStack
 @export var icon: TextureRect
 @export var count: Label
 

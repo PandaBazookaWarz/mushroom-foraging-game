@@ -1,7 +1,7 @@
 extends Node
 class_name InventoryData
 
-var capacity: int = 5
+var capacity: int = 15
 @onready var items: Array[ItemStack] = []
 	
 func _ready() -> void:

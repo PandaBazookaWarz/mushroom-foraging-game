@@ -10,3 +10,5 @@ name = "Red Fly"
 icon = ExtResource("1_82xso")
 max_stack = 10
 description = "Bright red cap and white spots. Maybe not the best for stew, or any other dishes."
+biome = 5
+type = 1
