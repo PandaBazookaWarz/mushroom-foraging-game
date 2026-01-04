@@ -3,7 +3,7 @@ class_name CompendiumUI
 
 @onready var slots: Array[CompendiumSlot] = []
 @export var grid: Control
-@export var icon: TextureRect
+@export var sketch: TextureRect
 @export var title: Label
 @export var description: Label
 @export var pages: TextureRect
@@ -11,6 +11,7 @@ class_name CompendiumUI
 
 
 func _ready() -> void:
+	reset_info_page()
 	print("Compendium Pages Ready!")
 	add_to_group("ui_pages")
 	for node in grid.get_tree().get_nodes_in_group("compendium_slots"):
@@ -35,7 +36,7 @@ func update_vis():
 
 func set_info(item_data: ItemData):
 	print("compendium set_info")
-	icon.texture = item_data.icon
+	sketch.texture = item_data.sketch
 	title.text = item_data.name
 	description.text = item_data.description
 	print(item_data.description)
@@ -51,9 +52,7 @@ func close():
 func filter(f: ItemData.Biomes):
 	if active_filter == f:
 		return
-	title.text = ""
-	description.text = ""
-	icon.texture = null
+	reset_info_page()
 	active_filter = f
 	update_vis()
 	for sticky in get_tree().get_nodes_in_group("stickies"):
@@ -61,5 +60,10 @@ func filter(f: ItemData.Biomes):
 			sticky.z_index = pages.z_index
 		else:
 			sticky.z_index = pages.z_index+1
+			
+func reset_info_page():
+	title.text = ""
+	description.text = ""
+	sketch.texture = null
 	
 	

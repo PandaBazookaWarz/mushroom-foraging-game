@@ -11,12 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://fsv7py7518gy" path="res://Assets/UI/Book/Book UI - Brown Sticky.png" id="8_5lmrg"]
 [ext_resource type="Texture2D" uid="uid://vi4stqacg0qy" path="res://Assets/UI/Book/Book UI - Green Sticky.png" id="9_6f1x8"]
 [ext_resource type="Texture2D" uid="uid://e13utm4j0gqo" path="res://Assets/UI/Book/Book UI - Red Sticky.png" id="10_pwfu5"]
+[ext_resource type="Texture2D" uid="uid://cytlp3384rtai" path="res://Assets/UI/Sketches/Forest/Mushroom Sketch - Red Fly.png" id="11_uy4tt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tepg8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y256l"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t7w84"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q30wg"]
 font = ExtResource("5_v6lhl")
@@ -30,7 +29,7 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qbqb7"]
 
-[node name="Compendium" type="Control" node_paths=PackedStringArray("grid", "icon", "title", "description", "pages")]
+[node name="Compendium" type="Control" node_paths=PackedStringArray("grid", "sketch", "title", "description", "pages")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,9 +38,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_leaqf")
 grid = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/RightPage/MarginContainer/CompendiumGrid")
-icon = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/Icon")
-title = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer/Title")
-description = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer/EntryText")
+sketch = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/MarginContainer/Sketch")
+title = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/Title")
+description = NodePath("BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/EntryText")
 pages = NodePath("BindingTexture/MarginContainer/PagesTexture")
 
 [node name="BindingTexture" type="TextureRect" parent="."]
@@ -172,40 +171,44 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -37.0
+offset_right = 37.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 32
+theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_bottom = 64
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 alignment = 1
 
-[node name="Panel" type="Panel" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_t7w84")
-
-[node name="Icon" type="TextureRect" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-expand_mode = 2
-stretch_mode = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
-
-[node name="Title" type="Label" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 text = "Title"
 label_settings = SubResource("LabelSettings_q30wg")
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="EntryText" type="Label" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Sketch" type="TextureRect" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("11_uy4tt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EntryText" type="Label" parent="BindingTexture/MarginContainer/PagesTexture/MarginContainer/HBoxContainer/LeftPage/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 text = "This is the description of the item selected."

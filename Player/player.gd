@@ -4,6 +4,7 @@ const SPEED = 300.0
 const ACCEL = 7
 
 @export var playerSprite : Sprite2D
+@export var interactionArea: Area2D
 
 var input: Vector2
 
@@ -53,7 +54,7 @@ func handle_interact():
 
 
 func get_closest_colliding() -> Area2D:
-	var colliding: Array[Area2D] = $InteractionArea.get_overlapping_areas()
+	var colliding: Array[Area2D] = interactionArea.get_overlapping_areas()
 	var closest: Area2D = null
 	var closest_dist := INF
 	for c in colliding:

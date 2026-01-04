@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c8n781uouoqlh"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://c8n781uouoqlh"]
 
 [ext_resource type="Texture2D" uid="uid://cyewntlm4oooa" path="res://Assets/Items/Mushrooms/Mushroom - Red Fly.png" id="1_82xso"]
 [ext_resource type="Script" uid="uid://brnu30qldpksj" path="res://ItemData/ItemData.gd" id="2_a5871"]
+[ext_resource type="Texture2D" uid="uid://cytlp3384rtai" path="res://Assets/UI/Sketches/Forest/Mushroom Sketch - Red Fly.png" id="3_a5871"]
 
 [resource]
 script = ExtResource("2_a5871")
@@ -12,3 +13,4 @@ max_stack = 10
 description = "Bright red cap and white spots. Maybe not the best for stew, or any other dishes."
 biome = 5
 type = 1
+sketch = ExtResource("3_a5871")

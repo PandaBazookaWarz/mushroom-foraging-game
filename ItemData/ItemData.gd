@@ -14,3 +14,4 @@ enum Types {Plant, Mushroom, Rock, None}
 @export var description: String
 @export var biome: Biomes
 @export var type: Types
+@export var sketch: Texture2D
