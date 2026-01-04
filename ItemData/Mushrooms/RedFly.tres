@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c8n781uouoqlh"]
 
 [ext_resource type="Texture2D" uid="uid://cyewntlm4oooa" path="res://Assets/Items/Mushrooms/Mushroom - Red Fly.png" id="1_82xso"]
-[ext_resource type="Script" path="res://ItemData/ItemData.gd" id="2_a5871"]
+[ext_resource type="Script" uid="uid://brnu30qldpksj" path="res://ItemData/ItemData.gd" id="2_a5871"]
 
 [resource]
 script = ExtResource("2_a5871")
