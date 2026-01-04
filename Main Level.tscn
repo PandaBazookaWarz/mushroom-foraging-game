@@ -10,15 +10,16 @@
 [ext_resource type="PackedScene" uid="uid://dvk0xxmnrt60x" path="res://Prefabs/Nature/Mushrooms/RedFly.tscn" id="10_oj6q3"]
 [ext_resource type="PackedScene" uid="uid://up577vc03wpl" path="res://Prefabs/Nature/Mushrooms/Godotshroom.tscn" id="11_b5ol6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(96, 124)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_vjb8f"]
 radius = 71.26
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(96, 179)
 
 [node name="Main Level" type="Node2D"]
 
 [node name="Level" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="Level"]
 offset_left = -7120.5254
@@ -44,36 +45,39 @@ position = Vector2(8, 340)
 [node name="Collectable3" parent="Level" instance=ExtResource("11_b5ol6")]
 position = Vector2(318, 336)
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("playerSprite")]
+[node name="Player" type="CharacterBody2D" parent="Level" node_paths=PackedStringArray("playerSprite")]
 script = ExtResource("1_ceigu")
-playerSprite = NodePath("Float Animation/PlayerSprite")
+playerSprite = NodePath("Offset/Float Animation/PlayerSprite")
 
-[node name="Float Animation" type="Node2D" parent="Player" node_paths=PackedStringArray("Player", "Shadow")]
+[node name="Offset" type="Node2D" parent="Level/Player"]
+position = Vector2(0, -110.69)
+
+[node name="Float Animation" type="Node2D" parent="Level/Player/Offset" node_paths=PackedStringArray("Player", "Shadow")]
 script = ExtResource("2_uxobj")
 Player = NodePath("PlayerSprite")
 Shadow = NodePath("Shadow")
 
-[node name="Shadow" type="Sprite2D" parent="Player/Float Animation"]
+[node name="Shadow" type="Sprite2D" parent="Level/Player/Offset/Float Animation"]
 position = Vector2(33, 161)
 scale = Vector2(0.58928573, 0.58928573)
 texture = ExtResource("4_uxobj")
 
-[node name="PlayerSprite" type="Sprite2D" parent="Player/Float Animation"]
+[node name="PlayerSprite" type="Sprite2D" parent="Level/Player/Offset/Float Animation"]
 position = Vector2(34.185005, 59.490784)
 scale = Vector2(0.6339611, 0.6339611)
 texture = ExtResource("3_bs0lh")
 
-[node name="PlayerCollider" type="CollisionShape2D" parent="Player"]
-position = Vector2(33, 37)
-shape = SubResource("RectangleShape2D_0hol4")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Level/Player/Offset"]
 position = Vector2(0.045, 31.97)
 
-[node name="InteractionArea" type="Area2D" parent="Player"]
+[node name="InteractionArea" type="Area2D" parent="Level/Player/Offset"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/InteractionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player/Offset/InteractionArea"]
 position = Vector2(33, 65)
 shape = SubResource("CircleShape2D_vjb8f")
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="Level/Player"]
+position = Vector2(33, -24.5)
+shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="UI" parent="." instance=ExtResource("9_42i6i")]
